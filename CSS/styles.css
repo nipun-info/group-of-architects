@@ -16,11 +16,15 @@ body {
     --dark-02: rgba(66, 66, 66, 1);
     --dark-03: rgba(114, 114, 114, 1);
     --bg-primary: rgba(255, 144, 14, 0.1);
+    --text-primary: rgba(255, 144, 14, 1);
 }
 
 /* shared styles or reuse styles */
 .d-flex {
     display: flex;
+}
+.d-grid {
+    display: grid;
 }
 .dark-01 {
     color: var(--dark-01);
@@ -34,6 +38,9 @@ body {
 .bg-primary {
     background: var(--bg-primary);
 }
+.text-primary {
+    color: var(--text-primary);
+}
 .text-01 {
     color: var(--dark-03);
     font-size: 1rem;
@@ -44,21 +51,27 @@ body {
     background-color: #ff900e;
     color: #FFF;
     padding: 14px 28px;
+    margin: 14px 0;
     font-size: 1.25rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
 }
-html {
-    
-}
+
 img {
     width: 100%;
 }
 
+.section-title {
+    color: var(--dark-01);
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
 /* ------ header styles -------- */
 header {
-    padding: 2.5rem 0;
+    padding: 2.5rem 10px;
     background-color: var(--bg-primary);
 }
 /* nav related styles */
@@ -80,8 +93,8 @@ header {
     color: var(--dark-02);
     font-weight: 500;
 }
-.navbar, .banner {
-    max-width: 1440px;
+.navbar, .banner, main {
+    max-width: 1368px;
     margin: 0 auto;
 }
 
@@ -102,7 +115,29 @@ header {
 
 
 /* ------ main styles -------- */
-
+main > section {
+    margin-top: 130px;
+}
+/* ******* Teams styles ******* */
+.teams {
+    align-items: center;
+}
+.team-img-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+.team-content-info {
+    margin-left: 130px;
+    max-width: 530px;
+}
+#quick {
+    color: var(--dark-03);
+    font-weight: 400;
+} 
+/* ******* Features ******* */
+/* ******* Facts ******* */
+/* ******* Sponspors ******* */
 
 
 
@@ -122,11 +157,20 @@ header {
     .banner {
         padding: 0 20px;
     }
-    .banner-content {
+    .banner-content, .teams {
         margin: 1rem auto;
     }
     .banner-title{
         font-size: 2rem;
+    }
+    .teams {
+        flex-direction: column-reverse;
+    }
+    .team-img-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .team-content-info {
+        margin-left: 20px;
     }
    
 }
@@ -142,6 +186,15 @@ header {
     }
     .banner-content {
         margin: 1rem auto;
+    }
+    .teams {
+        flex-direction: column-reverse;
+    }
+    .team-img-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .team-content-info {
+        margin-left: 40px;
     }
 
     
